@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input:valid{
+            border: 2px solid greenyellow;
+        }
+        input:invalid {
+            border: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <main class="loginBox">
+        <form id="login" action="" >
+            <h1 class="login-title">LOGIN</h1>
+            <div class="inputBox">
+                <input name="user" class="input" type="text" placeholder="用户名" required minlength="6" maxlength="12" >
+            </div>
+            <div class="inputBox">
+                <input name="password" class="input" type="password" placeholder="密码" required minlength="6" maxlength="24">
+            </div>
+            <button type="submit" class="btn">登录</button>
+            <a href="javascript:;" style="text-decoration: none;">注册</a>
+        </form>
+        <form id="register" action="" >
+            <h1 class="register-title">SINGUP</h1>
+            <div class="inputBox">
+                <input name="user" class="input" type="text" placeholder="用户名" required minlength="6" maxlength="12">
+            </div>
+            <div class="inputBox">
+                <input name="password" class="input" type="password" placeholder="密码" required minlength="6" maxlength="24">
+            </div>
+            <button type="submit" class="btn">注册</button>
+            <a href="javascript:;" style="text-decoration: none;">登录</a>
+        </form>
+    </main>
+</body>
+</html>
+<script>
+    //登录与注册面板切换效果
+    let as = document.getElementsByTagName('a');
+    
+    let login = document.getElementById('login');
+    
+    let register = document.getElementById('register');
+    
+    as[0].onclick = ()=>{
+        login.style.transform = "rotateY(180deg)";
+        register.style.transform = "rotateY(360deg)";
+    }
+    as[1].onclick = ()=>{
+        login.style.transform = "rotateY(360deg)";
+        register.style.transform = "rotateY(180deg)";
+    }
+    
+    //Space write forbidden
+    let input = document.querySelectorAll('input');
+    for(let a of input){
+        
+
+        a.addEventListener('keyup',function(){
+            this.value = this.value.trim();
+        })
+
+        //Constraint validation 约束验证
+        a.addEventListener('input',function(event){
+            if(this.validity.tooShort){
+                this.setCustomValidity('长度不能小于6');
+                
+            }else{
+                a.setCustomValidity('');
+                
+            }
+        })
+        
+    }
+
+    
+
+</script>

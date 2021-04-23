@@ -1,0 +1,69 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/background.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginBox{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    
+}
+#login{
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+    background-color: #ffffff30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: 2s;
+}
+.login-title{
+    color: white;
+    margin: 20px;
+}
+.input{
+    padding: 10px;
+    
+    width: 250px;
+    height: 57px;
+    box-sizing: border-box;
+    background-color: #ffffff00;
+    border: none;
+}
+.inputBox{
+    border-bottom: 2px solid rgb(43, 43, 43);
+    margin: 20px;
+}
+.btn{
+    width:150px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 40px;
+    background-image: linear-gradient(to right,#b8cbb8 0%,#b465da 0%,#cf6cc9 33%,#ee609c 66%,#ee609c 100%);
+    border: none;
+    cursor: pointer;
+}
+#register{
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+    background-color: #ffffff30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: 2s;
+}
+.register-title{
+    color: white;
+    margin: 20px;
+}
