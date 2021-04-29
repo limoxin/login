@@ -13,19 +13,17 @@ http.createServer((request,response)=>{
         let u = fs.readFileSync('../information/users.json');
         users = JSON.parse(u);
         let newUser = queryString.parse(postData.toString());
-        // console.log(postData);
-        // console.log(newUser);
-        console.log(users);
+        
         let exist = users.some(item=>{
-            console.log(item);
+            
             if(item.username === newUser.username){
-                console.log('yes')
+                
                 return item.password === newUser.password;
             }else{
                 return false;
             }
         })
-        console.log(exist)
+        
         if(exist){
             let url = request.url;
             if(url === '/'){
